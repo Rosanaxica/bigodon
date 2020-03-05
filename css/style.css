@@ -1,0 +1,100 @@
+.bigodon{
+    animation: animationFrames ease-in-out 4s infinite;
+    transform-origin: 500px 340px;
+}
+.mustache {
+    width: 180px;
+    height: 180px;
+    color: black;
+    position: absolute;
+    border-radius: 50%;
+    /* eixo x - eixo y - blur - spread */
+    box-shadow: 150px 320px 0 0 currentColor, 300px 320px 0 0 currentColor;
+ 
+}
+
+.mustache:before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 120px;
+    top: 200px;
+    left: 30px;
+    border-bottom: solid 180px currentColor;
+    /* top-left|top-right -bottom-left| bottom-right*/
+    border-radius: 0 0 0 100%;
+    transform: rotate(-40deg);
+    transform-origin: right 210px;
+    animation: shakeLeft 1s ease-in-out infinite;
+}
+
+.mustache:after {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 120px;
+    top: 200px;
+    left: 390px;
+    border-bottom: solid 180px currentColor;
+    /* top-left|top-right -bottom-left| bottom-right*/
+    border-radius: 0 0 100% 0;
+    transform: rotate(40deg);
+    transform-origin: left 210px;
+    animation: shakeRight 1s ease-in-out infinite;
+}
+
+@keyframes shakeLeft {
+    0%{
+        transform: rotate(-50deg);
+      
+      }
+    50%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(-50deg);
+    }
+}
+@keyframes shakeRight {
+    0%{
+        transform: rotate(50deg);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes gira{
+    0%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+  @keyframes animationFrames{
+    0% {
+      transform: rotate(0deg) ;
+    }
+    30%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    70%{
+        transform: rotate(240deg);
+    }
+    100% {
+      transform: rotate(360deg) ;
+    }
+  }
+  
